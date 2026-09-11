@@ -9,7 +9,7 @@ void Player::set_health(int health_val) {health = health_val;}
 
 Player::Player()
     : health{0}, xp{0}, name{"None"} {
-    std::cout << "Default constructor called." << "\n";
+    std::cout << "No args constructor called." << "\n";
 }
 
 Player::Player(int health_val)
