@@ -1,67 +1,106 @@
-# Calculator Function Overloading (C++)
+# Calculator Function Overloading in C++
 
 ## Overview
 
-This project demonstrates **function overloading** in C++ by creating a simple calculator.
+This project demonstrates **function overloading** by using the same function name, `calculate()`, to perform different calculations based on the number and type of arguments passed to it.
 
-Function overloading allows multiple functions to have the **same name** but different parameter lists. The compiler determines which version of the function to call based on the arguments provided.
+The program shows how C++ can determine which function to call at compile time by examining the function's parameter list.
 
 ## Concepts Practiced
 
 - Function overloading
-- Parameters and arguments
+- Integers and doubles
+- Function parameters
 - Return values
-- Compiler function resolution
+- Compile-time polymorphism
 - Basic arithmetic operations
 
-## Example
+## How It Works
 
-Instead of creating separate function names:
+The program overloads the `calculate()` function in three different ways:
+
+### Addition
 
 ```cpp
-addInt(2, 3);
-addDouble(2.5, 3.5);
+int calculate(int a, int b);
 ```
 
-We can overload the same function name:
+Adds two integers together.
+
+**Example:**
 
 ```cpp
-add(2, 3);
-add(2.5, 3.5);
+calculate(1, 2);
 ```
 
-The compiler automatically chooses the correct version of the function.
+**Output:**
 
-## Sample Implementation
+```text
+3
+```
+
+### Multiplication
 
 ```cpp
-int add(int a, int b);
-double add(double a, double b);
+double calculate(double a, double b);
+```
+
+Multiplies two double values.
+
+**Example:**
+
+```cpp
+calculate(10.0, 20.0);
+```
+
+**Output:**
+
+```text
+200
+```
+
+### Average
+
+```cpp
+int calculate(int a, int b, int c);
+```
+
+Calculates the average of three integers.
+
+**Example:**
+
+```cpp
+calculate(5, 10, 15);
+```
+
+**Output:**
+
+```text
+10
+```
+
+## Sample Program Output
+
+```text
+###### Test for addition ######
+3
+
+###### Test for multiplication ######
+200
+
+###### Test for average ######
+10
 ```
 
 ## What I Learned
 
-- Functions can share the same name if their parameter lists are different.
+- Multiple functions can share the same name when their parameter lists differ.
+- C++ chooses the correct overloaded function based on the arguments provided.
 - The return type alone cannot be used to overload functions.
-- Overloading makes code easier to read and maintain.
-- The compiler selects the correct function based on the number and type of arguments.
-
-## Expected Output
-
-```text
-Addition (int): 8
-Addition (double): 8.7
-```
-
-## Future Improvements
-
-- Add subtraction, multiplication, and division overloads.
-- Support more data types.
-- Create a menu-driven calculator.
-- Convert the project into a Calculator class using object-oriented programming.
+- Overloading can make code more readable by using meaningful function names instead of creating many separate functions.
 
 ## Author
 
 Aamer Riaz
 
-Part of my C++ learning journey using the "Beginning C++ Programming - From Beginner to Beyond" course.
+Created while learning C++ and practicing function overloading.
